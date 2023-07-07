@@ -1,0 +1,17 @@
+dlib
+h5py
+Keras
+matplotlib
+numpy
+opencv-python
+Pillow
+scikit-image
+scipy
+tensorflow-gpu
+tqdm
+librosa
+numexpr
+ffmpeg-python
+colorama
+pyqt5
+tf2onnx
