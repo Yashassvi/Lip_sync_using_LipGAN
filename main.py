@@ -19,9 +19,6 @@ def load_images_from_path(input_dir="output\faces"):
 			images.append(img)
 	return images
 
-input_video="input/Kohli_input_video.mp4"
-input_audio="input/Kohli-satish.mp3"
-
 # Trimming video
 #VideoEd.cut_video(input_file=input_video,from_time="00:00:00.000",to_time="00:00:00.020")
 
@@ -35,9 +32,9 @@ input_audio="input/Kohli-satish.mp3"
 #Extractor.main(detector="s3fd",input_path="output/images",output_path="output/faces",face_type="whole_face")
 
 # Input audio
-aud=AudioSegment.from_mp3(input_audio)
-input_audio=input_audio.split(".")[0]+".wav"
-aud.export(input_audio,format="wav")
+aud=AudioSegment.from_mp3(args.audio)
+input_audio=args.audio.split(".")[0]+".wav"
+aud.export(args.audio,format="wav")
 
 
 cmd="python batch_inference.py --checkpoint_path "+args.model_path+" --model residual --face "+args.face+" --fps "+args.fps+" --audio "+args.audio+" --results_dir "+args.results_dir
